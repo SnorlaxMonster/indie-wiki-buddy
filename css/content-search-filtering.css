@@ -7,13 +7,11 @@
   font-family: sans-serif;
 }
 .iwb-notice-content {
-  color: white !important;
-  mix-blend-mode: difference !important;
+  color: white;
+  mix-blend-mode: difference;
 }
 .iwb-notice a {
   text-decoration: underline !important;
-  color: white !important;
-  mix-blend-mode: difference !important;
 }
 .iwb-hide {
   display: none !important;
@@ -84,8 +82,6 @@
   display: inline-block;
   margin: .5em;
   font-size: 12px;
-  color: white !important;
-  mix-blend-mode: difference !important;
 }
 .iwb-result-controls > div {
   display: inline-block;
@@ -94,6 +90,8 @@
   text-decoration-style: dotted;
   text-decoration-thickness: 1px;
   padding: 0 1em;
+  mix-blend-mode: difference;
+  color: white;
 }
 
 .iwb-notice .iwb-result-controls {

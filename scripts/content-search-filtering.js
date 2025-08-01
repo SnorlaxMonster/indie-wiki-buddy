@@ -59,28 +59,6 @@ function removeSubstringIfAtEnd(str, sub) {
 }
 
 /**
- * Finds the closest ancestor element with a non-transparent background color.
- * @param {HTMLElement} element
- * @returns {string}
- */
-function getClosestBackgroundColor(element) {
-  let parent = element;
-  while (parent) {
-    const style = window.getComputedStyle(parent);
-    const bgColor = style.backgroundColor;
-    if (bgColor !== 'rgba(0, 0, 0, 0)' && bgColor !== 'transparent') {
-      return bgColor;
-    }
-    if (parent.parentElement) {
-      parent = parent.parentElement;
-    } else {
-      break;
-    }
-  }
-  return 'transparent';
-}
-
-/**
  * Function to show a chip/banner at the top of the container with a redirected url, and disable the original link/result.
  * @param {HTMLElement} searchResultContainer
  * @param {SiteData} wikiInfo
@@ -160,8 +138,6 @@ function replaceSearchResult(searchResultContainer, wikiInfo, link) {
     } else {
       searchResultContainer.prepend(indieContainer);
     }
-
-    indieContainer.style.backgroundColor = getClosestBackgroundColor(searchResultContainer);
 
     return 1;
   }
@@ -309,7 +285,6 @@ function mountSearchBanner(wikiInfo) {
     searchRemovalNotice.appendChild(searchRemovalNoticeContent);
 
     mountToTopOfSearchResults(searchRemovalNotice);
-    searchRemovalNotice.style.backgroundColor = getClosestBackgroundColor(searchRemovalNotice);
   }
 }
 
